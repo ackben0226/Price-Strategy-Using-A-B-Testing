@@ -56,7 +56,7 @@ __Size:__ Thousands of transactions across multiple categories.
 
 ## __Created new features:__
 - __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
-- __Adjusted Revenue:__ Calculated as Quantity Sold * Adjusted Price.
+- __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ____Adjusted Price___.
 
 Results Summary
 Discount Strategy: The 10% discount led to a 15% increase in sales volume but only a 5% increase in revenue, suggesting a trade-off between volume and profit margins.
