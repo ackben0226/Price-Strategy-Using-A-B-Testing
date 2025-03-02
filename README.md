@@ -1,7 +1,8 @@
-# Price-Strategy-Using-A/B-Testing
+# Price Strategy Using A/B Testing
 ## __Can Pricing Strategy Make or Break a Business?__
 
-Pricing is one of the most critical levers a business can pull to influence revenue, profitability, and customer behavior. But how do businesses determine the right pricing strategy? Inspired by my interest in data-driven decision-making, I embarked on this project to explore the impact of discounts, price increases, and bundling strategies using A/B testing.
+Pricing is one of the most powerful tools a business can use to shape revenue, profitability, and customer behavior. Yet, determining the right pricing strategy is often a complex challenge. How can businesses strike the perfect balance between attracting customers and maximizing profits?
+Driven by my passion for data-driven decision-making, I embarked on this project to uncover the impact of various pricing strategies—discounts, price increases, and product bundling—using A/B testing. By rigorously analyzing customer behavior and revenue outcomes, I aimed to answer critical questions:
 
 Through rigorous experimentation and analysis, I aimed to answer key questions:
 
