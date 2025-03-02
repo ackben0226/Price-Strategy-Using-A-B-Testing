@@ -159,3 +159,23 @@ u_stat, p_value = stats.mannwhitneyu(
 )
 print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
 ```
+## __Bundling Selling Analysis__
+```python
+def analyze_bundling(data, bundle_items):
+
+    # Filter data for bundled items
+    bundled_data = data[data["Product Category"].isin(bundle_items)].copy()
+    
+    # Label items as "Bundled" or "Single Item"
+    bundled_data["Bundled"] = bundled_data["Product Category"].apply(
+        lambda x: "Bundled" if x in bundle_items else "Single Item"
+    )
+    
+    # Aggregate total sales by bundling status
+    result = bundled_data.groupby("Bundled").agg(
+        Total_Sales=("Revenue", "sum"),  # Total revenue for bundled vs. single items
+        Avg_Sales_Per_Transaction=("Revenue", "mean")  # Average revenue per transaction
+    ).reset_index()
+    
+    return result
+```
