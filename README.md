@@ -68,7 +68,7 @@ __Size:__ Thousands of transactions across multiple categories.
 
 The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
 
-#### Code
+###Code
 
 ```python
 from scipy import stats
@@ -119,3 +119,42 @@ for category in categories_to_test:
 ``` 
 
 ### __Price increase sensitivity test using A/B testing and statistical analysis__
+## __Code__
+'''python
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+# Simulate price increase test (A: Original Price, B: 10% Increase) for all products
+np.random.seed(42)  # Set seed for reproducibility
+data["Test Group"] = np.random.choice(
+    ["A (Original Price)", "B (10% increase)"], 
+    size=len(data)
+)
+
+# Apply the 10% price increase to group B
+data["Adjusted Price"] = np.where(
+    data["Test Group"] == "B (10% increase)",
+    data["Price per Unit"] * 1.1,  # Increase price by 10%
+    data["Price per Unit"]  # Keep original price for group A
+)
+
+# Calculate adjusted revenue
+data["Adjusted Revenue"] = data["Quantity"] * data["Adjusted Price"]
+
+# Compare results between groups
+grouped = data.groupby("Test Group").agg(
+    Avg_Quantity=("Quantity", "mean"),  # Average quantity sold
+    Avg_Revenue=("Adjusted Revenue", "mean"),  # Average revenue per transaction
+    Total_Revenue=("Adjusted Revenue", "sum")  # Total revenue per group
+).reset_index()
+
+print("\nPrice Increase Results (All Products):\n", grouped)
+
+# Mann-Whitney U test (non-parametric test for non-normal data)
+u_stat, p_value = stats.mannwhitneyu(
+    data[data["Test Group"] == "A (Original Price)"]["Adjusted Revenue"],
+    data[data["Test Group"] == "B (10% increase)"]["Adjusted Revenue"]
+)
+print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
+'''
