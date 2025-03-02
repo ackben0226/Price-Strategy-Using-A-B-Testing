@@ -14,17 +14,13 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
 
 ## __Actions:__ 
 1. __Data Collection and Preparation__
-2. __Collected sales transaction data, including product categories, pricing, quantity sold, and revenue.__
-3. __Cleaned and preprocessed the data to handle missing values and outliers, ensuring high data quality for analysis.__
-
-## __Experimental Design__
-Designed A/B tests to evaluate three pricing strategies:
-
-Discount Strategy:
-
-Group A (Control): No discount applied.
-
-Group B (Test): 10% discount applied.
+   - Collected sales transaction data, including product categories, pricing, quantity sold, and revenue.
+   - Cleaned and preprocessed the data to handle missing values and outliers, ensuring high data quality for analysis.
+2. ## __Experimental Design__
+   - Designed A/B tests to evaluate three pricing strategies:
+      - __Discount Strategy:__
+        - Group A (Control): No discount applied.
+        - Group B (Test): 10% discount applied.
 
 Price Increase Sensitivity:
 
