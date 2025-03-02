@@ -16,7 +16,7 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
 1. __Data Collection and Preparation__
    - Collected sales transaction data, including product categories, pricing, quantity sold, and revenue.
    - Cleaned and preprocessed the data to handle missing values and outliers, ensuring high data quality for analysis.
-2. ## __Experimental Design__
+2. ### __Experimental Design__
    - Designed A/B tests to evaluate three pricing strategies:
       - __Discount Strategy:__
         - Group A (Control): No discount applied.
@@ -24,14 +24,14 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
       - __Price Increase Sensitivity:__
          - Group A (Control): Original pricing maintained.
          - Group B (Test): 10% price increase applied.
-3. ## __Bundling Strategy:__
+3. ### __Bundling Strategy:__
    - Created bundled product groups and compared their sales performance against individual item sales.
-4. ## __Revenue Adjustment and Statistical Analysis__
+4. ### __Revenue Adjustment and Statistical Analysis__
    - Computed adjusted revenue for each group to account for discounts and price changes.
    - Conducted statistical hypothesis testing (t-test) to determine if revenue differences between groups were statistically significant (p < 0.05).
    - Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
 
-5. ## __Data Visualization and Insights:__
+5. ### __Data Visualization and Insights:__
 6. Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/3527511a-6751-42d7-823f-cb0f1335b66d)
 
