@@ -65,8 +65,9 @@ __Size:__ Thousands of transactions across multiple categories.
 
 3. ## __Code Implementation & Visualizations__
 1. __A/B Testing for Discount Strategy__
-   </b>The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
+   </b>The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:>
    
+
 from scipy import stats
 import numpy as np
 
