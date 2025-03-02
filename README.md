@@ -1,4 +1,4 @@
-# Price-Strategy-Using-A-B-Testing
+# Price-Strategy-Using-A/B-Testing
 ## __Can Pricing Strategy Make or Break a Business?__
 
 Pricing is one of the most critical levers a business can pull to influence revenue, profitability, and customer behavior. But how do businesses determine the right pricing strategy? Inspired by my interest in data-driven decision-making, I embarked on this project to explore the impact of discounts, price increases, and bundling strategies using A/B testing.
@@ -33,7 +33,8 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
 
 5. ### __Data Visualization and Insights:__
 6. Created visualizations to compare revenue trends and customer behavior across groups.
-![image](https://github.com/user-attachments/assets/3527511a-6751-42d7-823f-cb0f1335b66d)
+![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
+
 
 Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
 
