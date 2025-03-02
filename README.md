@@ -221,3 +221,5 @@ group_b = data[data["Group"] == "B (Bundle Offered)"]["Total Amount"]
 u_stat, p_value = stats.mannwhitneyu(group_a, group_b)
 print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
 ```
+## __Visualization of revenue trend between bundle purchase and individual purchase__
+![image](https://github.com/user-attachments/assets/fee04968-9f00-4cc4-9a72-2b16730dd2c7)
