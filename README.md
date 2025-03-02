@@ -13,7 +13,7 @@ Through rigorous experimentation and analysis, I aimed to answer key questions:
 This project focuses on evaluating the effectiveness of a discount-based pricing strategy using A/B testing, alongside exploring the impact of price increases and bundling strategies. The primary objective is to determine whether offering a discount (e.g., 10% off) or increasing the price (e.g., 10% higher) leads to measurable changes in revenue and purchase behavior across different product categories. Additionally, we investigate whether bundling products can enhance sales performance compared to selling items individually.
 
 ## __Actions:__ 
-1. __Data Collection and Preparation__
+- ### __Data Collection and Preparation__
    - Collected sales transaction data, including product categories, pricing, quantity sold, and revenue.
    - Cleaned and preprocessed the data to handle missing values and outliers, ensuring high data quality for analysis.
 2. ### __Experimental Design__
