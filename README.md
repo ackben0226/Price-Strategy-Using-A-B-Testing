@@ -223,4 +223,14 @@ u_stat, p_value = stats.mannwhitneyu(group_a, group_b)
 print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
 ```
 ## __Visualization of revenue trend between bundle purchase and individual purchase__
+```python
+import matplotlib.pyplot as plt
+
+# Revenue comparison
+plt.figure(figsize=(6, 4))
+sns.barplot(x='Group', y='Total Amount', data=revenue, palette=['red', 'pink'])
+plt.title('Total Revenue: Bundle vs. No Bundle')
+plt.ylabel('Revenue')
+plt.show()
+```
 ![image](https://github.com/user-attachments/assets/fee04968-9f00-4cc4-9a72-2b16730dd2c7)
