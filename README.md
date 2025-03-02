@@ -234,3 +234,26 @@ plt.ylabel('Revenue')
 plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/fee04968-9f00-4cc4-9a72-2b16730dd2c7)
+
+6. ## __Executive Summary__
+- __Objective Recap:__
+This project evaluates the impact of discount-based pricing strategies, price increases, and bundling on revenue using A/B testing, helping businesses make data-driven decisions.
+- __Key Findings:__
+  - Discounts positively impacted revenue for certain product categories.
+  - Price increases showed mixed effects, with some categories retaining customers while others experienced a drop in revenue.
+  - Bundling strategies improved sales performance for complementary products.
+__Challenges & Learnings:__
+  - Some categories did not exhibit revenue improvement, suggesting price elasticity varies across products.
+  - A more refined segmentation approach could improve pricing strategies.
+________________________________________
+7. Discussion, Growth, and Next Steps
+Future Enhancements:
+•	Introduce machine learning models to predict optimal discount and pricing strategies.
+•	Perform multivariate testing to analyze the impact of other factors (e.g., seasonal trends, customer segmentation).
+Deployment Considerations:
+•	Implement real-time A/B testing in production environments.
+•	Automate data collection and analysis pipelines for continuous monitoring.
+Expanding the Scope:
+•	Test pricing strategies across different customer demographics.
+•	Explore additional promotional strategies (e.g., bundling, limited-time offers) to increase sales.
+This project lays the foundation for data-driven pricing optimization, equipping businesses with actionable insights to maximize revenue while maintaining customer satisfaction.
