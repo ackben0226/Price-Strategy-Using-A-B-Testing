@@ -115,6 +115,7 @@ for category in categories_to_test:
     print(f"{category} Discount Results:")
     print(results)
     print(f"P-value: {p_value:.4f}")
-    print("-" * 40 + "\n")` ``` `
+    print("-" * 40 + "\n")
+``` 
 
 ### __Price increase sensitivity test using A/B testing and statistical analysis__
