@@ -46,7 +46,7 @@ Identified patterns in product category performance and highlighted actionable i
 
 ## 2. __Data Overview__
 
-__Data:__[Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv)
+__Data:__ [Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv)
 
 The dataset consists of historical sales transaction records from an e-commerce platform, providing insights into customer purchase behavior across multiple product categories.
 
@@ -69,7 +69,8 @@ __Size:__ Thousands of transactions across multiple categories.
 
 ## 3. __Code Implementation & Visualizations__ 
 The Python code used to conduct the A/B tests, perform data analysis, and generate results is hosted on GitHub. You can explore the code and run the analysis yourself:
-__GitHub Repository:__ Price Strategy Using A/B Testing - GitHub
+
+__GitHub Repository:__  [Price Strategy Using A/B Testing](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Price_Strategy_Using_A_B_Testing.ipynb) - GitHub
 ### A/B Testing for Discount Strategy
 
 The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
