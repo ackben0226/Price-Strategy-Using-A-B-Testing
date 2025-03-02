@@ -21,24 +21,15 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
       - __Discount Strategy:__
         - Group A (Control): No discount applied.
         - Group B (Test): 10% discount applied.
-
-Price Increase Sensitivity:
-
-Group A (Control): Original pricing maintained.
-
-Group B (Test): 10% price increase applied.
-
-Bundling Strategy:
-
-Created bundled product groups and compared their sales performance against individual item sales.
-
-Revenue Adjustment and Statistical Analysis
-
-Computed adjusted revenue for each group to account for discounts and price changes.
-
-Conducted statistical hypothesis testing (t-test) to determine if revenue differences between groups were statistically significant (p < 0.05).
-
-Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
+      - __Price Increase Sensitivity:__
+         - Group A (Control): Original pricing maintained.
+         - Group B (Test): 10% price increase applied.
+3. ## __Bundling Strategy:__
+   - Created bundled product groups and compared their sales performance against individual item sales.
+4. ## __Revenue Adjustment and Statistical Analysis__
+   - Computed adjusted revenue for each group to account for discounts and price changes.
+   - Conducted statistical hypothesis testing (t-test) to determine if revenue differences between groups were statistically significant (p < 0.05).
+   - Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
 
 Data Visualization and Insights
 
