@@ -120,7 +120,8 @@ for category in categories_to_test:
 
 ### __Price increase sensitivity test using A/B testing and statistical analysis__
 ## __Code__
-'''python
+
+```python
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -157,4 +158,4 @@ u_stat, p_value = stats.mannwhitneyu(
     data[data["Test Group"] == "B (10% increase)"]["Adjusted Revenue"]
 )
 print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
-'''
+```
