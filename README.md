@@ -161,21 +161,63 @@ print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
 ```
 ## __Bundling Selling Analysis__
 ```python
-def analyze_bundling(data, bundle_items):
+from scipy import stats
 
-    # Filter data for bundled items
-    bundled_data = data[data["Product Category"].isin(bundle_items)].copy()
-    
-    # Label items as "Bundled" or "Single Item"
-    bundled_data["Bundled"] = bundled_data["Product Category"].apply(
-        lambda x: "Bundled" if x in bundle_items else "Single Item"
-    )
-    
-    # Aggregate total sales by bundling status
-    result = bundled_data.groupby("Bundled").agg(
-        Total_Sales=("Revenue", "sum"),  # Total revenue for bundled vs. single items
-        Avg_Sales_Per_Transaction=("Revenue", "mean")  # Average revenue per transaction
-    ).reset_index()
-    
-    return result
+# Define the bundle (Beauty + Home)
+BUNDLE_PRICE = 320  # Discounted price
+INDIVIDUAL_PRICE = 50 + 300  # Beauty (50) + Home (300)
+
+# Identify customers who bought Beauty or Home products
+eligible_customers = set(data.loc[data["Product Category"].isin(["Beauty", "Home"]), "Customer ID"].unique())
+
+# Split into control (A) and treatment (B)
+np.random.seed(42)
+group_assignment = pd.DataFrame({
+    "Customer ID": list(eligible_customers),
+    "Group": np.random.choice(["A (No Bundle)", "B (Bundle Offered)"], size=len(eligible_customers))
+})
+
+# Merge group assignments with transactions
+data = pd.merge(data, group_assignment, on="Customer ID", how="left")
+data["Group"] = data["Group"].fillna("A (No Bundle)")  # Assign others to control
+
+# Simulate bundle purchases in treatment group (30% adoption rate)
+bundle_customers = data[
+    (data["Group"] == "B (Bundle Offered)") &
+    (data["Product Category"].isin(["Beauty", "Home"]))
+]["Customer ID"].unique()
+
+np.random.seed(42)
+bundle_adopters = np.random.choice(
+    bundle_customers,
+    size=int(len(bundle_customers) * 0.3),  # 30% buy the bundle
+    replace=False
+)
+
+# Remove individual Beauty/Home transactions for bundle adopters
+bundle_transactions = data[
+    (data["Customer ID"].isin(bundle_adopters)) &
+    (data["Product Category"].isin(["Beauty", "Home"]))
+].index
+data = data.drop(bundle_transactions).reset_index(drop=True)  # Reset index
+
+# Add new bundle transactions
+bundle_df = pd.DataFrame({
+    "Customer ID": bundle_adopters,
+    "Product Category": "Bundle",
+    "Quantity": 1,
+    "Revenue": BUNDLE_PRICE  # Ensure column name matches your dataset
+})
+
+data = pd.concat([data, bundle_df], ignore_index=True)
+# Calculate total revenue by group
+revenue = data.groupby("Group")["Total Amount"].sum().reset_index()
+print("Total Revenue by Group:\n", revenue)
+
+# Perform statistical test (Mann-Whitney U for non-normal data)
+group_a = data[data["Group"] == "A (No Bundle)"]["Total Amount"]
+group_b = data[data["Group"] == "B (Bundle Offered)"]["Total Amount"]
+
+u_stat, p_value = stats.mannwhitneyu(group_a, group_b)
+print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
 ```
