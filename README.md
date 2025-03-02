@@ -61,7 +61,7 @@ __Size:__ Thousands of transactions across multiple categories.
 
 ## __Created new features:__
 - __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
-- __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ____Adjusted Price___.
+- __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ___Adjusted Price___.
 
 3. ## __Code Implementation & Visualizations__
 1. __A/B Testing for Discount Strategy__
