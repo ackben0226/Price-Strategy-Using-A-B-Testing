@@ -71,33 +71,48 @@ The following code implements an A/B test to evaluate the impact of a 10% discou
 #### Code
 
 ```python
-from scipy import stats  
-import numpy as np  
+from scipy import stats
 
-def test_discount_strategy(data, category, discount=0.1):  
-    # Filter data for the specified category  
-    cat_data = data[data["Product Category"] == category].copy()  
+def test_discount_strategy(data, category, discount=0.1):
+    # Filter by category
+    cat_data = data[data["Product Category"] == category].copy()
 
-    # Randomly assign groups (A: No Discount, B: Discount)  
-    np.random.seed(42)  
-    cat_data["Test Group"] = np.random.choice(["A (No Discount)", "B (Discount)"], size=len(cat_data))  
+    # Split into A/B groups
+    np.random.seed(42)
+    cat_data["Test Group"] = np.random.choice(["A (No Discount)", "B (Discount)"], size=len(cat_data))
 
-    # Adjust prices for the test group  
-    cat_data["Adjusted Price"] = np.where(  
-        cat_data["Test Group"] == "B (Discount)",  
-        cat_data["Price per Unit"] * (1 - discount),  
-        cat_data["Price per Unit"]  
-    )  
+    # Apply discount to Group B
+    cat_data["Adjusted Price"] = np.where(
+        cat_data["Test Group"] == "B (Discount)",
+        cat_data["Price per Unit"] * (1 - discount),
+        cat_data["Price per Unit"]
+    )
+    cat_data["Adjusted Revenue"] = cat_data["Quantity"] * cat_data["Adjusted Price"]
 
-    # Calculate adjusted revenue  
-    cat_data["Adjusted Revenue"] = cat_data["Quantity"] * cat_data["Adjusted Price"]  
+    # Compare groups
+    grouped = cat_data.groupby("Test Group").agg(
+        Avg_Revenue=("Adjusted Revenue", "mean"),
+        Total_Revenue=("Adjusted Revenue", "sum"),
+        Sample_Size=("Test Group", "count")
+    ).reset_index()
 
-    # Perform t-test to compare revenue between groups  
-    t_stat, p_value = stats.ttest_ind(  
-        cat_data[cat_data["Test Group"] == "A (No Discount)"]["Adjusted Revenue"],  
-        cat_data[cat_data["Test Group"] == "B (Discount)"]["Adjusted Revenue"]  
-    )  
+    # T-test
+    t_stat, p_value = stats.ttest_ind(
+        cat_data[cat_data["Test Group"] == "A (No Discount)"]["Adjusted Revenue"],
+        cat_data[cat_data["Test Group"] == "B (Discount)"]["Adjusted Revenue"]
+    )
 
-    # Return average revenue by group and p-value  
-    return cat_data.groupby("Test Group").agg(Avg_Revenue=("Adjusted Revenue", "mean")), p_value  
+    return grouped, p_value
 
+# List of categories to test
+categories_to_test = ["Sports", "Beauty", "Clothing", 'Electronics', 'Home', 'Books']
+
+# Loop through each category
+for category in categories_to_test:
+    results, p_value = test_discount_strategy(data, category)
+
+    # Print formatted results
+    print(f"{category} Discount Results:")
+    print(results)
+    print(f"P-value: {p_value:.4f}")
+    print("-" * 40 + "\n")
