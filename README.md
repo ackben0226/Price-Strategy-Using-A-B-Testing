@@ -31,9 +31,9 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
    - Conducted statistical hypothesis testing (t-test) to determine if revenue differences between groups were statistically significant (p < 0.05).
    - Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
 
-Data Visualization and Insights
-
-Created visualizations using Tableau to compare revenue trends and customer behavior across groups.
+5. ## __Data Visualization and Insights:__
+6. Created visualizations using Tableau to compare revenue trends and customer behavior across groups.
+![image](https://github.com/user-attachments/assets/3527511a-6751-42d7-823f-cb0f1335b66d)
 
 Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
 
