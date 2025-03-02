@@ -45,6 +45,7 @@ Identified patterns in product category performance and highlighted actionable i
 
 ## __Sample Data Overview__
 __Source of Data:__
+(Retail Sales Data)[https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv]
 The dataset consists of historical sales transaction records from an e-commerce platform, providing insights into customer purchase behavior across multiple product categories.
 
 ## __Data Description:__
