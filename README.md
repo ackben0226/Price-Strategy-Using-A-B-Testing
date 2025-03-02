@@ -37,6 +37,11 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
 
 Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
 
+## __Results Summary__
+- __Discount Strategy:__ The 10% discount led to a 15% increase in sales volume but only a 5% increase in revenue, suggesting a trade-off between volume and profit margins.
+- __Price Increase Sensitivity:__ The 10% price increase resulted in a 3% drop in sales volume but a 7% increase in revenue, indicating that customers were relatively price-insensitive.
+- __Bundling Strategy:__ Bundled products saw a 20% higher average order value compared to individual item sales, demonstrating the effectiveness of bundling in driving higher revenue.
+
 ## __Sample Data Overview__
 __Source of Data:__
 The dataset consists of historical sales transaction records from an e-commerce platform, providing insights into customer purchase behavior across multiple product categories.
@@ -58,9 +63,6 @@ __Size:__ Thousands of transactions across multiple categories.
 - __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
 - __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ____Adjusted Price___.
 
-Results Summary
-Discount Strategy: The 10% discount led to a 15% increase in sales volume but only a 5% increase in revenue, suggesting a trade-off between volume and profit margins.
-
-Price Increase Sensitivity: The 10% price increase resulted in a 3% drop in sales volume but a 7% increase in revenue, indicating that customers were relatively price-insensitive.
-
-Bundling Strategy: Bundled products saw a 20% higher average order value compared to individual item sales, demonstrating the effectiveness of bundling in driving higher revenue.
+3. ## __Code Implementation & Visualizations__
+1. __A/B Testing for Discount Strategy__
+The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
