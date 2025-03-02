@@ -32,10 +32,31 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
    - Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
 
 5. ## __Data Visualization and Insights:__
-6. Created visualizations using Tableau to compare revenue trends and customer behavior across groups.
+6. Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/3527511a-6751-42d7-823f-cb0f1335b66d)
 
 Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
+
+## __Sample Data Overview__
+__Source of Data:__
+The dataset consists of historical sales transaction records from an e-commerce platform, providing insights into customer purchase behavior across multiple product categories.
+
+## __Data Description:__
+- __Key Features:__
+  - Product Category
+  - Price per Unit
+  - Quantity Sold
+  - Revenue
+
+__Size:__ Thousands of transactions across multiple categories.
+
+## __Preprocessing Steps:__
+- Handled missing values in pricing and sales data to ensure data integrity.
+- Standardized product categories to maintain uniformity across the dataset.
+
+## __Created new features:__
+- __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
+- __Adjusted Revenue:__ Calculated as Quantity Sold * Adjusted Price.
 
 Results Summary
 Discount Strategy: The 10% discount led to a 15% increase in sales volume but only a 5% increase in revenue, suggesting a trade-off between volume and profit margins.
