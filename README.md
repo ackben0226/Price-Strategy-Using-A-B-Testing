@@ -9,14 +9,14 @@ Through rigorous experimentation and analysis, I aimed to answer key questions:
 - __Can a small price increase be implemented without losing customers?__
 - __Does bundling products encourage more purchases, or do customers prefer flexibility?__
 
-## __Project Overview__
+## 1. __Project Overview__
 This project focuses on evaluating the effectiveness of a discount-based pricing strategy using A/B testing, alongside exploring the impact of price increases and bundling strategies. The primary objective is to determine whether offering a discount (e.g., 10% off) or increasing the price (e.g., 10% higher) leads to measurable changes in revenue and purchase behavior across different product categories. Additionally, we investigate whether bundling products can enhance sales performance compared to selling items individually.
 
 ## __Actions:__ 
 - ### __Data Collection and Preparation__
    - Collected sales transaction data, including product categories, pricing, quantity sold, and revenue.
    - Cleaned and preprocessed the data to handle missing values and outliers, ensuring high data quality for analysis.
-2. ### __Experimental Design__
+- ### __Experimental Design__
    - Designed A/B tests to evaluate three pricing strategies:
       - __Discount Strategy:__
         - Group A (Control): No discount applied.
@@ -24,15 +24,15 @@ This project focuses on evaluating the effectiveness of a discount-based pricing
       - __Price Increase Sensitivity:__
          - Group A (Control): Original pricing maintained.
          - Group B (Test): 10% price increase applied.
-3. ### __Bundling Strategy:__
+- ### __Bundling Strategy:__
    - Created bundled product groups and compared their sales performance against individual item sales.
-4. ### __Revenue Adjustment and Statistical Analysis__
+- ### __Revenue Adjustment and Statistical Analysis__
    - Computed adjusted revenue for each group to account for discounts and price changes.
    - Conducted statistical hypothesis testing (t-test) to determine if revenue differences between groups were statistically significant (p < 0.05).
    - Analyzed key metrics such as conversion rates, average order value, and customer purchase behavior.
 
-5. ### __Data Visualization and Insights:__
-6. Created visualizations to compare revenue trends and customer behavior across groups.
+- ### __Data Visualization and Insights:__
+Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
 
 
@@ -43,8 +43,9 @@ Identified patterns in product category performance and highlighted actionable i
 - __Price Increase Sensitivity:__ The 10% price increase resulted in a 3% drop in sales volume but a 7% increase in revenue, indicating that customers were relatively price-insensitive.
 - __Bundling Strategy:__ Bundled products saw a 20% higher average order value compared to individual item sales, demonstrating the effectiveness of bundling in driving higher revenue.
 
-## __Sample Data Overview__
+## 2. __Sample Data Overview__
 __Source of Data:__[Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv)
+
 The dataset consists of historical sales transaction records from an e-commerce platform, providing insights into customer purchase behavior across multiple product categories.
 
 ## __Data Description:__
@@ -64,7 +65,7 @@ __Size:__ Thousands of transactions across multiple categories.
 - __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
 - __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ___Adjusted Price___.
 
-3. ## __Code Implementation & Visualizations__
+## 3. __Code Implementation & Visualizations__
 ### A/B Testing for Discount Strategy
 
 The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
@@ -235,7 +236,7 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/fee04968-9f00-4cc4-9a72-2b16730dd2c7)
 
-6. ## __Executive Summary__
+## 4. __Executive Summary__
 - __Objective Recap:__
 This project evaluates the impact of discount-based pricing strategies, price increases, and bundling on revenue using A/B testing, helping businesses make data-driven decisions.
 - __Key Findings:__
@@ -246,7 +247,7 @@ This project evaluates the impact of discount-based pricing strategies, price in
   - Some categories did not exhibit revenue improvement, suggesting price elasticity varies across products.
   - A more refined segmentation approach could improve pricing strategies.
 
-7. ## __Discussion, Growth, and Next Steps__
+## 5. __Discussion, Growth, and Next Steps__
 - __Future Enhancements:__
   - Introduce machine learning models to predict optimal discount and pricing strategies.
   - Perform multivariate testing to analyze the impact of other factors (e.g., seasonal trends, customer segmentation).
