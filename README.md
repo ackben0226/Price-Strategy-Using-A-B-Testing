@@ -66,12 +66,12 @@ __Size:__ Thousands of transactions across multiple categories.
 - __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
 - __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ___Adjusted Price___.
 
-## 3. __Code Implementation & Visualizations__
+## 3. __Code Implementation & Visualizations__ 
 ### A/B Testing for Discount Strategy
 
 The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
 
-###Code
+### Code
 
 ```python
 from scipy import stats
