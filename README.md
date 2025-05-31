@@ -65,11 +65,13 @@ This project evaluates the impact of **three pricing strategies—discounts, pri
 __Impact on Revenue by Category:__
 |Category|	Avg Revenue (No Discount)|	Avg Revenue (10% Off)|	P-value|
 |---------|--------|--------|-------|
-|Electronics|	$2792.68|	$2719.15|	0.2357|
-|Clothing|	$1,605.26|	$1,387.06|	0.0073|
-|Beauty	|$165.74	|$134.50	|0.001|
+|Electronics|	$2,955.06|	$2,576.84|	0.050|
+|Clothing|	$1597.40|	$1396.55|	0.0079|
+|Beauty	|$148.21|$145.52	|0.3506|
 
-📌 **Insight:** Discounts work best in Electronics & Clothing, but Beauty & Books show minimal gains.
+📌 **Insight:** Sports, Clothing, Electronics, and Home all show significant drops in average revenue per order, except Home maintains total revenue—others lose both per-unit and total income. Beauty and Books show no significant impact—volume helped raise total revenue, but the profit per sale declined slightly.
+
+
 Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
 
