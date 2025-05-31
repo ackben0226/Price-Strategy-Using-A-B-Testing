@@ -1,5 +1,5 @@
 # Price Optimization Using A/B Testing: Data-Driven Insights for Retail Strategy
-## Executive Summmary
+## Executive Summary
 This project evaluates the impact of **three pricing strategies—discounts, price increases, and product bundling—on sales, revenue, and customer behavior** using A/B testing. By analyzing transaction data from a retail business, we determine:
 
 - __Whether a 10% discount increases sales volume and revenue.__
@@ -52,7 +52,7 @@ This project evaluates the impact of **three pricing strategies—discounts, pri
    - __Statistical Analysis:__ Used __t-tests & Mann-Whitney U tests__ (p < 0.05 significance).
    - __Key Metrics:__ Revenue per category, conversion rates, profit margins.
 ## Data Used
-📊 __Dataset:__ [Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv)(1,000+ transactions)
+📊 __Dataset:__ [Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv) (1,000+ transactions)
 
 📌 __Features:__
    - Product Category (Electronics, Beauty, Home, etc.)
@@ -69,7 +69,8 @@ __Impact on Revenue by Category:__
 |Clothing|	$1597.40|	$1396.55|	0.0079|
 |Beauty	|$148.21|$145.52	|0.3506|
 
-📌 **Insight:** Sports, Clothing, Electronics, and Home all show significant drops in average revenue per order, except Home maintains total revenue—others lose both per-unit and total income. Beauty and Books show no significant impact—volume helped raise total revenue, but the profit per sale declined slightly.
+📌 **Insight:** Sports, Clothing, Electronics, and Home all show significant drops in average revenue per order, except Home that maintains total revenue—others lose both per-unit and total income. Beauty and Books show no significant impact—volume helped raise total revenue, but the profit per sale declined slightly.
+
 ![image](https://github.com/user-attachments/assets/55047acf-1338-43e2-ba5d-8308fba7f933)
 
 ### B) Price Increase (10% Higher)
@@ -79,18 +80,51 @@ __Impact on Revenue__
 |Original Price	|$1,106.59	|Baseline|
 |10% Increase	|$1,165.05|	↓0.98%|
 
-📌 __Insight:__ Price hikes boost revenue but demand dropd slightly.
+📌 __Insight:__ Price hikes boost revenue but demand drops slightly.
 
-C) Bundling Strategy
-Revenue Comparison:
+### C) Bundling Strategy
+__Revenue Comparison:__
+|Group	|Avg Order Value|
+|-----|----|
+|Individual	|$11,395.22|
+|Bundle Offer	|$12,996.22 (+14%)|
 
-Group	Avg Order Value
-Individual	$320
-Bundle Offer	$384 (+20%)
-📌 Insight: Bundling increases order value significantly.
+📌 __Insight:__ Bundling increases order value significantly.
 
 Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
+
+## 3. Recommendations
+### 1. Optimize Discounts
+- Discount may hurt Electronics, Clothing & Sports
+- Limited discount in: Books, Beauty & Home (maintained revenue despite margin pressure).
+  
+### 2. Test Price Increases Carefully
+- Start with premium categories (Electronics, Home).
+- Monitor churn risk in price-sensitive segments.
+
+### 3. Expand Bundling Strategies
+- Pair frequently bought together (e.g., Sports + Home).
+_ Run promotions ("Buy X, Get Y at 10% off").
+
+###  4. Future Enhancements
+🔹 **Machine Learning:** Predict optimal pricing per customer segment.
+🔹 **Dynamic Pricing:** Adjust in real-time based on demand.
+🔹 **Seasonal Testing:** Compare holiday vs. regular pricing.
+
+## 4. Conclusion
+**Pricing strategy significantly impacts profitability.**
+- Discounts drive volume but may hurt margins.
+- Price increases can boost revenue if applied strategically.
+- Bundling enhances average order value.
+
+**Next Steps:**
+- __Deploy real-time A/B tests__ in production.
+- __Refine segmentation__ (e.g., loyalty vs. new customers).
+
+📂 GitHub Code: Price Strategy Using A/B Testing
+
+**By leveraging data-driven pricing, businesses can maximize revenue while maintaining customer satisfaction.** 🚀
 
 
 Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
@@ -119,173 +153,7 @@ The Python code used to conduct the A/B tests, perform data analysis, and genera
 __GitHub Repository:__  [Price Strategy Using A/B Testing](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Price_Strategy_Using_A_B_Testing.ipynb) - GitHub
 ### A/B Testing for Discount Strategy
 
-The following code implements an A/B test to evaluate the impact of a 10% discount on revenue for a specific product category:
 
-### Code
-
-```python
-from scipy import stats
-
-def test_discount_strategy(data, category, discount=0.1):
-    # Filter by category
-    cat_data = data[data["Product Category"] == category].copy()
-
-    # Split into A/B groups
-    np.random.seed(42)
-    cat_data["Test Group"] = np.random.choice(["A (No Discount)", "B (Discount)"], size=len(cat_data))
-
-    # Apply discount to Group B
-    cat_data["Adjusted Price"] = np.where(
-        cat_data["Test Group"] == "B (Discount)",
-        cat_data["Price per Unit"] * (1 - discount),
-        cat_data["Price per Unit"]
-    )
-    cat_data["Adjusted Revenue"] = cat_data["Quantity"] * cat_data["Adjusted Price"]
-
-    # Compare groups
-    grouped = cat_data.groupby("Test Group").agg(
-        Avg_Revenue=("Adjusted Revenue", "mean"),
-        Total_Revenue=("Adjusted Revenue", "sum"),
-        Sample_Size=("Test Group", "count")
-    ).reset_index()
-
-    # T-test
-    t_stat, p_value = stats.ttest_ind(
-        cat_data[cat_data["Test Group"] == "A (No Discount)"]["Adjusted Revenue"],
-        cat_data[cat_data["Test Group"] == "B (Discount)"]["Adjusted Revenue"]
-    )
-
-    return grouped, p_value
-
-# List of categories to test
-categories_to_test = ["Sports", "Beauty", "Clothing", 'Electronics', 'Home', 'Books']
-
-# Loop through each category
-for category in categories_to_test:
-    results, p_value = test_discount_strategy(data, category)
-
-    # Print formatted results
-    print(f"{category} Discount Results:")
-    print(results)
-    print(f"P-value: {p_value:.4f}")
-    print("-" * 40 + "\n")
-``` 
-
-### __Price increase sensitivity test using A/B testing and statistical analysis__
-## __Code__
-
-```python
-import numpy as np
-import pandas as pd
-from scipy import stats
-
-# Simulate price increase test (A: Original Price, B: 10% Increase) for all products
-np.random.seed(42)  # Set seed for reproducibility
-data["Test Group"] = np.random.choice(
-    ["A (Original Price)", "B (10% increase)"], 
-    size=len(data)
-)
-
-# Apply the 10% price increase to group B
-data["Adjusted Price"] = np.where(
-    data["Test Group"] == "B (10% increase)",
-    data["Price per Unit"] * 1.1,  # Increase price by 10%
-    data["Price per Unit"]  # Keep original price for group A
-)
-
-# Calculate adjusted revenue
-data["Adjusted Revenue"] = data["Quantity"] * data["Adjusted Price"]
-
-# Compare results between groups
-grouped = data.groupby("Test Group").agg(
-    Avg_Quantity=("Quantity", "mean"),  # Average quantity sold
-    Avg_Revenue=("Adjusted Revenue", "mean"),  # Average revenue per transaction
-    Total_Revenue=("Adjusted Revenue", "sum")  # Total revenue per group
-).reset_index()
-
-print("\nPrice Increase Results (All Products):\n", grouped)
-
-# Mann-Whitney U test (non-parametric test for non-normal data)
-u_stat, p_value = stats.mannwhitneyu(
-    data[data["Test Group"] == "A (Original Price)"]["Adjusted Revenue"],
-    data[data["Test Group"] == "B (10% increase)"]["Adjusted Revenue"]
-)
-print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
-```
-## __Bundling Selling Analysis__
-```python
-from scipy import stats
-
-# Define the bundle (Beauty + Home)
-BUNDLE_PRICE = 320  # Discounted price
-INDIVIDUAL_PRICE = 50 + 300  # Beauty (50) + Home (300)
-
-# Identify customers who bought Beauty or Home products
-eligible_customers = set(data.loc[data["Product Category"].isin(["Beauty", "Home"]), "Customer ID"].unique())
-
-# Split into control (A) and treatment (B)
-np.random.seed(42)
-group_assignment = pd.DataFrame({
-    "Customer ID": list(eligible_customers),
-    "Group": np.random.choice(["A (No Bundle)", "B (Bundle Offered)"], size=len(eligible_customers))
-})
-
-# Merge group assignments with transactions
-data = pd.merge(data, group_assignment, on="Customer ID", how="left")
-data["Group"] = data["Group"].fillna("A (No Bundle)")  # Assign others to control
-
-# Simulate bundle purchases in treatment group (30% adoption rate)
-bundle_customers = data[
-    (data["Group"] == "B (Bundle Offered)") &
-    (data["Product Category"].isin(["Beauty", "Home"]))
-]["Customer ID"].unique()
-
-np.random.seed(42)
-bundle_adopters = np.random.choice(
-    bundle_customers,
-    size=int(len(bundle_customers) * 0.3),  # 30% buy the bundle
-    replace=False
-)
-
-# Remove individual Beauty/Home transactions for bundle adopters
-bundle_transactions = data[
-    (data["Customer ID"].isin(bundle_adopters)) &
-    (data["Product Category"].isin(["Beauty", "Home"]))
-].index
-data = data.drop(bundle_transactions).reset_index(drop=True)  # Reset index
-
-# Add new bundle transactions
-bundle_df = pd.DataFrame({
-    "Customer ID": bundle_adopters,
-    "Product Category": "Bundle",
-    "Quantity": 1,
-    "Revenue": BUNDLE_PRICE  # Ensure column name matches your dataset
-})
-
-data = pd.concat([data, bundle_df], ignore_index=True)
-# Calculate total revenue by group
-revenue = data.groupby("Group")["Total Amount"].sum().reset_index()
-print("Total Revenue by Group:\n", revenue)
-
-# Perform statistical test (Mann-Whitney U for non-normal data)
-group_a = data[data["Group"] == "A (No Bundle)"]["Total Amount"]
-group_b = data[data["Group"] == "B (Bundle Offered)"]["Total Amount"]
-
-u_stat, p_value = stats.mannwhitneyu(group_a, group_b)
-print(f"\nMann-Whitney U Test: p = {p_value:.4f}")
-```
-## __Visualization of revenue trend between bundle purchase and individual purchase__
-```python
-import matplotlib.pyplot as plt
-
-# Revenue comparison
-plt.figure(figsize=(6, 4))
-sns.barplot(x='Group', y='Total Amount', data=revenue, palette=['red', 'pink'])
-plt.title('Total Revenue: Bundle vs. No Bundle')
-plt.ylabel('Revenue')
-plt.show()
-```
-![image](https://github.com/user-attachments/assets/fee04968-9f00-4cc4-9a72-2b16730dd2c7)
 
 ## 4. __Executive Summary__
 - __Objective Recap:__
