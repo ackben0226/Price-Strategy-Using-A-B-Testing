@@ -59,6 +59,7 @@ This project evaluates the impact of **three pricing strategies—discounts, pri
    - Price per Unit
    - Quantity Sold
    - Total Amount
+   - new features: __Adjusted Revenue:__ = ___Quantity Sold___ __*__ ___Adjusted Price___.
    
 ## 2. Key Results & Visualization
 ### A) Discount Strategy (10% Off)
@@ -91,8 +92,7 @@ __Revenue Comparison:__
 
 📌 __Insight:__ Bundling increases order value significantly.
 
-Created visualizations to compare revenue trends and customer behavior across groups.
-![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
+![image](https://github.com/user-attachments/assets/589a40a8-95de-46b4-a879-ff8d86322dd2)
 
 ## 3. Recommendations
 ### 1. Optimize Discounts
@@ -105,12 +105,17 @@ Created visualizations to compare revenue trends and customer behavior across gr
 
 ### 3. Expand Bundling Strategies
 - Pair frequently bought together (e.g., Sports + Home).
-_ Run promotions ("Buy X, Get Y at 10% off").
+- Run promotions ("Buy X, Get Y at 10% off").
 
 ###  4. Future Enhancements
 🔹 **Machine Learning:** Predict optimal pricing per customer segment.
 🔹 **Dynamic Pricing:** Adjust in real-time based on demand.
 🔹 **Seasonal Testing:** Compare holiday vs. regular pricing.
+
+## __Results Summary__
+- __Discount Strategy:__ The 10% discount increases revenue in some categories and vice-versa in other categories. It also leads to a decline in profit across all categories
+- __Price Increase Sensitivity:__ The 10% price increase resulted in a ~1% (0.98%) drop in sales volume but a 5.28% increase in revenue, indicating that customers were relatively price-insensitive.
+- __Bundling Strategy:__ Bundled products saw a 14% higher average order value compared to individual item sales, demonstrating the effectiveness of bundling in driving higher revenue.
 
 ## 4. Conclusion
 **Pricing strategy significantly impacts profitability.**
@@ -122,59 +127,9 @@ _ Run promotions ("Buy X, Get Y at 10% off").
 - __Deploy real-time A/B tests__ in production.
 - __Refine segmentation__ (e.g., loyalty vs. new customers).
 
-📂 GitHub Code: Price Strategy Using A/B Testing
+📂 __GitHub Code:__ [Price Strategy Using A/B Testing](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Price_Strategy_Using_A_B_Testing.ipynb)
 
-**By leveraging data-driven pricing, businesses can maximize revenue while maintaining customer satisfaction.** 🚀
-
-
-Identified patterns in product category performance and highlighted actionable insights for optimizing pricing strategies.
-
-## __Results Summary__
-- __Discount Strategy:__ The 10% discount led to a 15% increase in sales volume but only a 5% increase in revenue, suggesting a trade-off between volume and profit margins.
-- __Price Increase Sensitivity:__ The 10% price increase resulted in a 3% drop in sales volume but a 7% increase in revenue, indicating that customers were relatively price-insensitive.
-- __Bundling Strategy:__ Bundled products saw a 20% higher average order value compared to individual item sales, demonstrating the effectiveness of bundling in driving higher revenue.
-
-## 2. __Data Overview__
-
-__Data:__ [Retail Sales Data](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Retail%20Sales%20Data.csv)(1,000+ transactions)
-
-
-## __Preprocessing Steps:__
-- Handled missing values in pricing and sales data to ensure data integrity.
-- Standardized product categories to maintain uniformity across the dataset.
-
-## __Created new features:__
-- __Adjusted Price:__ Adjusted based on discounts or price increases for A/B testing.
-- __Adjusted Revenue:__ Calculated as ___Quantity Sold___ __*__ ___Adjusted Price___.
-
-## 3. __Code Implementation & Visualizations__ 
-The Python code used to conduct the A/B tests, perform data analysis, and generate results is hosted on GitHub. You can explore the code and run the analysis yourself:
-
-__GitHub Repository:__  [Price Strategy Using A/B Testing](https://github.com/ackben0226/Price-Strategy-Using-A-B-Testing/blob/main/Price_Strategy_Using_A_B_Testing.ipynb) - GitHub
-### A/B Testing for Discount Strategy
+**🚀By leveraging data-driven pricing, businesses can maximize revenue while maintaining customer satisfaction.** 
 
 
 
-## 4. __Executive Summary__
-- __Objective Recap:__
-This project evaluates the impact of discount-based pricing strategies, price increases, and bundling on revenue using A/B testing, helping businesses make data-driven decisions.
-- __Key Findings:__
-  - Discounts positively impacted revenue for certain product categories.
-  - Price increases showed mixed effects, with some categories retaining customers while others experienced a drop in revenue.
-  - Bundling strategies improved sales performance for complementary products.
-- __Challenges & Learnings:__
-  - Some categories did not exhibit revenue improvement, suggesting price elasticity varies across products.
-  - A more refined segmentation approach could improve pricing strategies.
-
-## 5. __Discussion, Growth, and Next Steps__
-- __Future Enhancements:__
-  - Introduce machine learning models to predict optimal discount and pricing strategies.
-  - Perform multivariate testing to analyze the impact of other factors (e.g., seasonal trends, customer segmentation).
-- __Deployment Considerations:__
-  - Implement real-time A/B testing in production environments.
-  - Automate data collection and analysis pipelines for continuous monitoring.
-- __Expanding the Scope:__
-  - Test pricing strategies across different customer demographics.
-  - Explore additional promotional strategies (e.g., bundling, limited-time offers) to increase sales.
-    
-This project lays the foundation for data-driven pricing optimization, equipping businesses with actionable insights to maximize revenue while maintaining customer satisfaction.
