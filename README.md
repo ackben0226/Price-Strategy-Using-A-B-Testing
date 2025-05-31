@@ -70,7 +70,24 @@ __Impact on Revenue by Category:__
 |Beauty	|$148.21|$145.52	|0.3506|
 
 📌 **Insight:** Sports, Clothing, Electronics, and Home all show significant drops in average revenue per order, except Home maintains total revenue—others lose both per-unit and total income. Beauty and Books show no significant impact—volume helped raise total revenue, but the profit per sale declined slightly.
+![image](https://github.com/user-attachments/assets/55047acf-1338-43e2-ba5d-8308fba7f933)
 
+### B) Price Increase (10% Higher)
+__Impact on Revenue__
+|Group	|Avg Revenue	|Sales Volume Change|
+|-----|----|-----|
+|Original Price	|$1,106.59	|Baseline|
+|10% Increase	|$1,165.05|	↓0.98%|
+
+📌 __Insight:__ Price hikes boost revenue but demand dropd slightly.
+
+C) Bundling Strategy
+Revenue Comparison:
+
+Group	Avg Order Value
+Individual	$320
+Bundle Offer	$384 (+20%)
+📌 Insight: Bundling increases order value significantly.
 
 Created visualizations to compare revenue trends and customer behavior across groups.
 ![image](https://github.com/user-attachments/assets/36367c45-087d-4cbf-bb23-9801d0b37ca7)
