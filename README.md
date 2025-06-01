@@ -59,7 +59,7 @@ Determine how pricing strategies affect:
    - Price per Unit
    - Quantity Sold
    - Total Amount
-   - new features: __Adjusted Revenue__ = ___Quantity Sold___ __*__ ___Adjusted Price___.
+   - new features: __Adjusted Revenue__ __=__ ___Quantity Sold___ __*__ ___Adjusted Price___.
    
 ## 2. Key Results & Visualization
 ### A) Discount Strategy (10% Off)
