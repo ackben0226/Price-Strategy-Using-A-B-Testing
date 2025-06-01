@@ -270,6 +270,7 @@ print(f"\nMann-Whitney U Test p-value: {p_value:.4f}")
 
 # App initialization
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
+server = app.server
 app.title = "A/B Price Strategy Dashboard"
 
 #def summary_card(title1, value):
