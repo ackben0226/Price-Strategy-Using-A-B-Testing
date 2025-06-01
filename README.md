@@ -108,9 +108,9 @@ __Revenue Comparison:__
 - Run promotions ("Buy X, Get Y at 10% off").
 
 ###  4. Future Enhancements
-🔹 **Machine Learning:** Predict optimal pricing per customer segment.
-🔹 **Dynamic Pricing:** Adjust in real-time based on demand.
-🔹 **Seasonal Testing:** Compare holiday vs. regular pricing.
+- **Machine Learning:** Predict optimal pricing per customer segment.
+- **Dynamic Pricing:** Adjust in real-time based on demand.
+- **Seasonal Testing:** Compare holiday vs. regular pricing.
 
 ## __Results Summary__
 - __Discount Strategy:__ The 10% discount increases revenue in some categories and vice-versa in other categories. It also leads to a decline in profit across all categories
