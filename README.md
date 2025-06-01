@@ -37,7 +37,7 @@ This project evaluates the impact of **three pricing strategies—discounts, pri
 
 
 ## 1. __Project Overview__
-**Objective**
+### Objective
 <br/> Determine how pricing strategies affect:
 - __Sales Volume__
 - __Revenue__
