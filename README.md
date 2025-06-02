@@ -1,4 +1,6 @@
 # Price Optimization Using A/B Testing: Data-Driven Insights for Retail Strategy
+• _A/B Testing_ • _Pricing Analytics_ • _Python_ • _Statistical Testing_
+
 ## Executive Summary
 This project evaluates the impact of **three pricing strategies—discounts, price increases, and product bundling—on sales, revenue, and customer behavior** using A/B testing. By analyzing transaction data from a retail business, we determine:
 
